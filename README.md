@@ -13,10 +13,10 @@ In this challenge, you will write the logic for [THIS APP](https://advanced-stat
 
 ## Project Setup
 
-- Fork, clone, and `npm install`. You won't need to add any extra libraries.
-- Launch the project in a development server executing `npm run dev`.
-- Visit your app by navigating Chrome to `http://localhost:3000`.
-- Run tests locally executing `npm test`. The local test file is `codegrade_mvp.test.js`.
+- [x] Fork, clone, and `npm install`. You won't need to add any extra libraries.
+- [x] Launch the project in a development server executing `npm run dev`.
+- [x] Visit your app by navigating Chrome to `http://localhost:3000`.
+- [ ] Run tests locally executing `npm test`. The local test file is `codegrade_mvp.test.js`.
 
 ## Studying the prototype
 
@@ -42,7 +42,7 @@ Open the live prototype linked above and study its functionality using the follo
 
 ## Studying the API
 
-The endpoints needed for this project are the following:
+TODO The endpoints needed for this project are the following:
 
 - `[GET] http://localhost:9000/api/quiz/next`
   - The response to a proper request includes `200 OK` and the next quiz object
@@ -56,18 +56,18 @@ The endpoints needed for this project are the following:
   - Example of payload: `{ "quiz_id": "LVqUh", "answer_id": "0VEv0" }`
   - A response to a proper request includes `200 OK` and feedback on the answer
 
-❗ Test drive all these endpoints with [Postman](https://www.postman.com/downloads/) before starting with the project.
+TODO ❗ Test drive all these endpoints with [Postman](https://www.postman.com/downloads/) before starting with the project.
 
 ## MVP
 
-In order to complete this project, you must fix the following modules:
+TODO In order to complete this project, you must fix the following modules:
 
-- [reducer.js](frontend/state/reducer.js)
-- [action-creators.js](frontend/state/action-creators.js)
-- [Message.js](frontend/components/Message.js)
-- [Wheel.js](frontend/components/Wheel.js)
-- [Quiz.js](frontend/components/Quiz.js)
-- [Form.js](frontend/components/Form.js)
+- [ ] [reducer.js](frontend/state/reducer.js)
+- [ ] [action-creators.js](frontend/state/action-creators.js)
+- [ ] [Message.js](frontend/components/Message.js)
+- [ ] [Wheel.js](frontend/components/Wheel.js)
+- [ ] [Quiz.js](frontend/components/Quiz.js)
+- [ ] [Form.js](frontend/components/Form.js)
 
 ### Notes
 
@@ -79,8 +79,8 @@ In order to complete this project, you must fix the following modules:
 
 ## MVP Short Explanation
 
-❗ ALL TESTS MUST PASS
+TODO ❗ ALL TESTS MUST PASS
 
 ## Stretch Goals
-
+TODO
 - Without breaking any tests, see to randomizing the order in which answers appear.
