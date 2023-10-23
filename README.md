@@ -16,7 +16,7 @@ In this challenge, you will write the logic for [THIS APP](https://advanced-stat
 - [x] Fork, clone, and `npm install`. You won't need to add any extra libraries.
 - [x] Launch the project in a development server executing `npm run dev`.
 - [x] Visit your app by navigating Chrome to `http://localhost:3000`.
-- [ ] Run tests locally executing `npm test`. The local test file is `codegrade_mvp.test.js`.
+- [x] Run tests locally executing `npm test`. The local test file is `codegrade_mvp.test.js`.
 
 ## Studying the prototype
 
@@ -44,7 +44,7 @@ Open the live prototype linked above and study its functionality using the follo
 
 ## Studying the API
 
-TODO The endpoints needed for this project are the following:
+ The endpoints needed for this project are the following:
 
 - `[GET] http://localhost:9000/api/quiz/next` **This is fetched on reload and when a quiz answer is submitted**
   - The response to a proper request includes `200 OK` and the next quiz object
@@ -58,7 +58,7 @@ TODO The endpoints needed for this project are the following:
   - Example of payload: `{ "quiz_id": "LVqUh", "answer_id": "0VEv0" }`
   - A response to a proper request includes `200 OK` and feedback on the answer
 
-TODO ❗ Test drive all these endpoints with [Postman](https://www.postman.com/downloads/) before starting with the project.
+ ❗ Test drive all these endpoints with [Postman](https://www.postman.com/downloads/) before starting with the project.
 
 ## MVP
 
