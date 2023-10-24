@@ -6,6 +6,7 @@
   - Current position of the "B" in the wheel is maintained.
   - Current quiz question stays loaded.
   - Values inside the form are kept.
+- [ ] connect components to Redux store
 
 ## Wheel
 - [ ] Clockwise button to move B clockwise
