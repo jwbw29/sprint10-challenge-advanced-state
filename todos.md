@@ -1,15 +1,17 @@
 # Stuff to fix
 
 ## Whole App
+- [ ] The structure of the HTML (hierarchy, ids, class names, texts on buttons etc) must match those of the prototype exactly.
 - [ ] The routes **don't lose their state** by navigating the links back and forth:
   - Current position of the "B" in the wheel is maintained.
   - Current quiz question stays loaded.
   - Values inside the form are kept.
-- [ ] The structure of the HTML (hierarchy, ids, class names, texts on buttons etc) must match those of the prototype exactly.
 
 ## Wheel
 - [ ] Clockwise button to move B clockwise
+    - onClick -> make next index active?
 - [ ] Counter clockwise button to move B counter clockwise
+    - onClick -> make previous index active?
 
 ## Quiz
 - [ ] GET questions from the API
