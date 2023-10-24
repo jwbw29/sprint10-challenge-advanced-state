@@ -37,18 +37,18 @@ Open the live prototype linked above and study its functionality using the follo
 - The "Submit answer" button in the quiz stays disabled until **an answer is selected**.
 - Once an answer is selected, the only way to unselect it is by **selecting the other answer**.
 - The "Submit new quiz" button in the form stays disabled until **all** inputs have values such that `value.trim().length > 0`.
-    **Note: This helps eliminate answers with spaces only**
+  **Note: This helps eliminate answers with spaces only**
 - Submitting a new quiz successfully **adds it to the roster** of questions that cycle through the quiz screen.
-    **This will be a POST to the API**
+  **This will be a POST to the API**
 - The structure of the HTML (hierarchy, ids, class names, texts on buttons etc) must match those of the prototype exactly.
 
 ## Studying the API
 
- The endpoints needed for this project are the following:
+The endpoints needed for this project are the following:
 
 - `[GET] http://localhost:9000/api/quiz/next` **This is fetched on reload and when a quiz answer is submitted**
   - The response to a proper request includes `200 OK` and the next quiz object
-- `[POST] http://localhost:9000/api/quiz/new` This is the post made when submitting a NEW question on the Form page
+- `[POST] http://localhost:9000/api/quiz/new` **This is the post made when submitting a NEW question on the Form page**
   - Expects a payload with the following properties: `question_text`, `true_answer_text`, `false_answer_text`
   - Example of payload: `{ "question_text": "Love JS?", "true_answer_text": "yes", "false_answer_text": "nah" }`
   - The response to a proper request includes `201 Created` and the newly created quiz object
@@ -58,7 +58,7 @@ Open the live prototype linked above and study its functionality using the follo
   - Example of payload: `{ "quiz_id": "LVqUh", "answer_id": "0VEv0" }`
   - A response to a proper request includes `200 OK` and feedback on the answer
 
- ❗ Test drive all these endpoints with [Postman](https://www.postman.com/downloads/) before starting with the project.
+❗ Test drive all these endpoints with [Postman](https://www.postman.com/downloads/) before starting with the project.
 
 ## MVP
 
@@ -84,5 +84,7 @@ TODO In order to complete this project, you must fix the following modules:
 TODO ❗ ALL TESTS MUST PASS
 
 ## Stretch Goals
+
 TODO
+
 - Without breaking any tests, see to randomizing the order in which answers appear.
