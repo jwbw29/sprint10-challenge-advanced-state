@@ -6,6 +6,7 @@ const Wheel = (props) => {
   const { wheel } = props;
 
   return (
+    //// TODO I think we need to apply the state variable to these divs somehow; but that doesn't explain while it's not console logging onClick
     <div id="wrapper">
       <div id="wheel">
         <div className="cog active" style={{ "--i": 0 }}>

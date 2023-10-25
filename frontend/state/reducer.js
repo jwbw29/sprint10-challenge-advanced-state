@@ -11,12 +11,26 @@ import {
   RESET_FORM,
 } from "./action-types";
 
+//// Doing it this way below seems to make the state look wonky compared to the prototype
+// const initialState = {
+//   wheel: 0,
+//   quiz: null,
+//   selectedAnswer: null,
+//   infoMessage: "",
+//   form: {
+//     newQuestion: "",
+//     newTrueAnswer: "",
+//     newFalseAnswer: "",
+//   },
+// };
+
 const initialWheelState = 0;
 function wheel(state = initialWheelState, action) {
   switch (action.type) {
     case MOVE_CLOCKWISE:
       console.log("button was clicked");
-      return { ...state, initialWheelState: (initialWheelState + 1) % 6 };
+      return { ...state, wheel: 1 };
+    // (wheel + 1) % 6
     // case MOVE_COUNTERCLOCKWISE:
     //   return {
     //     ...state,
