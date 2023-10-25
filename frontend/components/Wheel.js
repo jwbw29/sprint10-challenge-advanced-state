@@ -9,19 +9,18 @@ const Wheel = (props) => {
   return (
     <div id="wrapper">
       <div id="wheel">
-        <div
-          className={`cog active ${wheel === 0 ? "selected" : ""}`}
-          style={{ "--i": 0 }}
-        >
-          B
-        </div>
-        {[1, 2, 3, 4, 5].map((cog) => (
-          <div
-            key={cog}
-            className={`cog ${wheel === cog ? "selected" : ""}`}
-            style={{ "--i": cog }}
-          ></div>
-        ))}
+        {[0, 1, 2, 3, 4, 5].map((cog) => {
+          const isActive = wheel === cog;
+          return (
+            <div
+              key={cog}
+              className={`cog ${isActive ? "active" : ""}`}
+              style={{ "--i": cog }}
+            >
+              {isActive ? "B" : null}
+            </div>
+          );
+        })}
       </div>
       <div id="keypad">
         <button id="counterClockwiseBtn" onClick={() => moveCounterClockwise()}>
