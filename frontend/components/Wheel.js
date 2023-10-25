@@ -3,6 +3,8 @@ import { moveClockwise, moveCounterClockwise } from "../state/action-creators";
 import { connect } from "react-redux";
 
 const Wheel = (props) => {
+  const { wheel } = props;
+
   return (
     <div id="wrapper">
       <div id="wheel">
@@ -17,10 +19,10 @@ const Wheel = (props) => {
         {/** --i is a custom CSS property, no need to touch that nor the style object */}
       </div>
       <div id="keypad">
-        <button id="counterClockwiseBtn" onClick={moveCounterClockwise()}>
+        <button id="counterClockwiseBtn" onClick={() => moveCounterClockwise()}>
           Counter clockwise
         </button>
-        <button id="clockwiseBtn" onClick={moveClockwise()}>
+        <button id="clockwiseBtn" onClick={() => moveClockwise()}>
           Clockwise
         </button>
       </div>

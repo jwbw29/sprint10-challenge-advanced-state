@@ -15,6 +15,7 @@ const initialWheelState = 0;
 function wheel(state = initialWheelState, action) {
   switch (action.type) {
     case MOVE_CLOCKWISE:
+      console.log("button was clicked");
       return { ...state, initialWheelState: (initialWheelState + 1) % 6 };
     case MOVE_COUNTERCLOCKWISE:
       return {
