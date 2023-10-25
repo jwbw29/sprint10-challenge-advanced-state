@@ -40,33 +40,30 @@ export function resetForm() {
 }
 
 //// Async action creators
-export function fetchQuiz() {
+export const fetchQuiz = () => (dispatch) => {
   const URL = "http://localhost:9000/api/quiz/next";
-  return function (dispatch) {
-    // - First, dispatch an action to reset the quiz state (so the "Loading next quiz..." message can display)
-    // - On successful GET:
-    // - Dispatch an action to send the obtained quiz to its state
-    axios
-      .get(URL)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-  };
-}
-export function postAnswer() {
+  // - First, dispatch an action to reset the quiz state (so the "Loading next quiz..." message can display)
+  dispatch(setQuiz()); //// still don't know whta to do here
+  axios
+    .get(URL)
+    .then((res) => {
+      // - On successful GET:
+      //    - Dispatch an action to send the obtained quiz to its state
+      console.log(res);
+    })
+    .catch((err) => console.log(err));
+};
+export const postAnswer = () => (dispatch) => {
   const URL = "http://localhost:9000/api/quiz/answer";
-  return function (dispatch) {
-    // - On successful POST:
-    // - Dispatch an action to reset the selected answer state
-    // - Dispatch an action to set the server message to state
-    // - Dispatch the fetching of the next quiz
-  };
-}
-export function postQuiz() {
+  // - On successful POST:
+  //    - Dispatch an action to reset the selected answer state
+  //    - Dispatch an action to set the server message to state
+  //    - Dispatch the fetching of the next quiz
+};
+export const postQuiz = () => (dispatch) => {
   const URL = "http://localhost:9000/api/quiz/new";
-  return function (dispatch) {
-    // - On successful POST:
-    // - Dispatch the correct message to the the appropriate state
-    // - Dispatch the resetting of the form
-  };
-}
+  // - On successful POST:
+  //    - Dispatch the correct message to the the appropriate state
+  //    - Dispatch the resetting of the form
+};
 //// On promise rejections, use log statements or breakpoints, and put an appropriate error message in state
