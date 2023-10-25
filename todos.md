@@ -9,9 +9,9 @@
 - [ ] connect components to Redux store
 
 ## Wheel
-- [ ] Clockwise button to move B clockwise
+- [x] Clockwise button to move B clockwise
     - onClick -> make next index active?
-- [ ] Counter clockwise button to move B counter clockwise
+- [x] Counter clockwise button to move B counter clockwise
     - onClick -> make previous index active?
 
 ## Quiz
