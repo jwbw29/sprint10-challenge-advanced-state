@@ -14,27 +14,27 @@ export function moveClockwise() {
 }
 
 export function moveCounterClockwise() {
-  return { type: MOVE_COUNTERCLOCKWISE, payload: null };
+  return { type: MOVE_COUNTERCLOCKWISE };
 }
 
 export function selectAnswer() {
-  return { type: SET_SELECTED_ANSWER, payload: null };
+  return { type: SET_SELECTED_ANSWER };
 }
 
 export function setMessage() {
-  return { type: SET_INFO_MESSAGE, payload: null };
+  return { type: SET_INFO_MESSAGE };
 }
 
 export function setQuiz() {
-  return { type: SET_QUIZ_INTO_STATE, payload: null };
+  return { type: SET_QUIZ_INTO_STATE };
 }
 
 export function inputChange() {
-  return { type: INPUT_CHANGE, payload: null };
+  return { type: INPUT_CHANGE };
 }
 
 export function resetForm() {
-  return { type: RESET_FORM, payload: null };
+  return { type: RESET_FORM };
 }
 
 //// Async action creators
