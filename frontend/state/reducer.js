@@ -17,11 +17,11 @@ function wheel(state = initialWheelState, action) {
     case MOVE_CLOCKWISE:
       console.log("button was clicked");
       return { ...state, initialWheelState: (initialWheelState + 1) % 6 };
-    case MOVE_COUNTERCLOCKWISE:
-      return {
-        ...state,
-        initialWheelState: (initialWheelState - 1 + 6) % 6,
-      };
+    // case MOVE_COUNTERCLOCKWISE:
+    //   return {
+    //     ...state,
+    //     initialWheelState: (initialWheelState - 1 + 6) % 6,
+    //   };
 
     default:
       return state;

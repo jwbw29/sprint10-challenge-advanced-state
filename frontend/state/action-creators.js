@@ -9,8 +9,8 @@ import {
   RESET_FORM,
 } from "./action-types";
 
-export function moveClockwise(wheel) {
-  return { type: MOVE_CLOCKWISE, payload: wheel };
+export function moveClockwise() {
+  return { type: MOVE_CLOCKWISE };
 }
 
 export function moveCounterClockwise() {
