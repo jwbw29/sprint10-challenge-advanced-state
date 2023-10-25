@@ -3,7 +3,7 @@ import { moveClockwise, moveCounterClockwise } from "../state/action-creators";
 import { connect } from "react-redux";
 
 const Wheel = (props) => {
-  const { wheel } = props;
+  const { wheel, moveClockwise, moveCounterClockwise } = props;
 
   return (
     //// TODO I think we need to apply the state variable to these divs somehow; but that doesn't explain while it's not console logging onClick
@@ -23,7 +23,7 @@ const Wheel = (props) => {
         <button id="counterClockwiseBtn" onClick={() => moveCounterClockwise()}>
           Counter clockwise
         </button>
-        <button id="clockwiseBtn" onClick={() => moveClockwise()}>
+        <button id="clockwiseBtn" onClick={() => moveClockwise(wheel)}>
           Clockwise
         </button>
       </div>
