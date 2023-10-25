@@ -29,7 +29,7 @@
 
 
 ## Message
-- [ ] Needs to apply state instead of hard code
+- [x] Needs to apply state instead of hard code
 
 
 

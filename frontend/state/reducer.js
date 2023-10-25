@@ -11,6 +11,7 @@ import {
   RESET_FORM,
 } from "./action-types";
 
+// [x] Wheel
 const initialWheelState = 0;
 function wheel(state = initialWheelState, action) {
   switch (action.type) {
@@ -25,21 +26,30 @@ function wheel(state = initialWheelState, action) {
   }
 }
 
+// [ ] Quiz
 const initialQuizState = null;
 function quiz(state = initialQuizState, action) {
-  return state;
+  switch (action.type) {
+    case SET_QUIZ_INTO_STATE:
+      return state;
+    default:
+      return state;
+  }
 }
 
+// [ ] QUIZ - Selected Answer
 const initialSelectedAnswerState = null;
 function selectedAnswer(state = initialSelectedAnswerState, action) {
   return state;
 }
 
+// [ ] QUIZ/FORM   - Message
 const initialMessageState = "";
 function infoMessage(state = initialMessageState, action) {
   return state;
 }
 
+// [ ] Form
 const initialFormState = {
   newQuestion: "",
   newTrueAnswer: "",
