@@ -32,7 +32,7 @@ const Quiz = (props) => {
     <div id="wrapper">
       {
         //** quiz already in state? Let's use that, otherwise render "Loading next quiz..." */
-        quizData ? ( // TODO replace this with something like quizData
+        quizData ? ( 
           <>
             <h2>{quizData.question}</h2>
 
