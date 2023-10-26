@@ -37,7 +37,7 @@ const Quiz = (props) => {
           <>
             <h2>{quizData.question}</h2>
             <div id="quizAnswers">
-              {quizData.answers.map((answer) => {
+              {quizData.answers.map((answer) => (
                 <div
                   key={answer.answer_id}
                   className={`answer ${
@@ -50,8 +50,8 @@ const Quiz = (props) => {
                       ? "SELECTED"
                       : "Select"}
                   </button>
-                </div>;
-              })}
+                </div>
+              ))}
             </div>
             <button id="submitAnswerBtn" onClick={handleClick}>
               Submit answer
