@@ -36,41 +36,23 @@ const Quiz = (props) => {
         quizData ? (
           <>
             <h2>{quizData.question}</h2>
-
             <div id="quizAnswers">
-              <div
-                className={`answer ${
-                  selectedAnswer === quizData.answers[0].answer_id
-                    ? "selected"
-                    : ""
-                }`}
-                onClick={}
-              >
-                {quizData.answers[0].text}
-                <button>
-                  {selectedAnswer === quizData.answers[0].answer_id
-                    ? "SELECTED"
-                    : "Select"}
-                </button>
-              </div>
-
-              <div
-                className={`answer ${
-                  selectedAnswer === quizData.answers[1].answer_id
-                    ? "selected"
-                    : ""
-                }`}
-                onClick={}
-              >
-                {quizData.answers[1].text}
-                <button>
-                  {selectedAnswer === quizData.answers[1].answer_id
-                    ? "SELECTED"
-                    : "Select"}
-                </button>
-              </div>
+              {quizData.answers.map((answer) => {
+                <div
+                  key={answer.answer_id}
+                  className={`answer ${
+                    selectedAnswer === answer.answer_id ? "selected" : ""
+                  }`}
+                >
+                  {answer.text}
+                  <button>
+                    {selectedAnswer === answer.answer_id
+                      ? "SELECTED"
+                      : "Select"}
+                  </button>
+                </div>;
+              })}
             </div>
-
             <button id="submitAnswerBtn" onClick={handleClick}>
               Submit answer
             </button>
@@ -98,4 +80,3 @@ export default connect(mapStateToProps, {
   fetchQuiz,
   postAnswer,
 })(Quiz);
-
