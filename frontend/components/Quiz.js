@@ -11,7 +11,7 @@ import {
 
 const Quiz = (props) => {
   const {
-    selectAnswer,
+    selectedAnswer,
     infoMessage,
     setMessage,
     setQuiz,
@@ -38,12 +38,12 @@ const Quiz = (props) => {
 
             <div id="quizAnswers">
               <div className="answer selected">
-                A function
+                {quizData.answers[0].text}
                 <button>SELECTED</button>
               </div>
 
               <div className="answer">
-                An elephant
+                {quizData.answers[1].text}
                 <button>Select</button>
               </div>
             </div>
@@ -63,7 +63,7 @@ const Quiz = (props) => {
 const mapStateToProps = (state) => {
   return {
     quizData: state.quiz,
-    selectAnswer: state.selectAnswer,
+    selectedAnswer: state.selectedAnswer,
     infoMessage: state.infoMessage,
   };
 };
