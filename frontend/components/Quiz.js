@@ -16,7 +16,7 @@ const Quiz = (props) => {
     setMessage,
     setQuiz,
     fetchQuiz,
-    quizQuestion,
+    quizData,
   } = props;
 
   useEffect(() => {
@@ -32,9 +32,9 @@ const Quiz = (props) => {
     <div id="wrapper">
       {
         //** quiz already in state? Let's use that, otherwise render "Loading next quiz..." */
-        true ? ( // TODO replace this with something like quizData
+        quizData ? ( // TODO replace this with something like quizData
           <>
-            <h2>{quizQuestion}</h2>
+            <h2>{quizData.question}</h2>
 
             <div id="quizAnswers">
               <div className="answer selected">
@@ -62,7 +62,7 @@ const Quiz = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    quizQuestion: state.quizData,
+    quizData: state.quiz,
     selectAnswer: state.selectAnswer,
     infoMessage: state.infoMessage,
   };

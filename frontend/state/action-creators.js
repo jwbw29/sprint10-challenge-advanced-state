@@ -28,7 +28,7 @@ export function setMessage() {
 
 export function setQuiz(quizData) {
   //// this happens on load, which means we need a GET somewhere
-  // console.log(quizData);
+  console.log(`setQuiz(quizData), quizData => ${quizData}`);
   return { type: SET_QUIZ_INTO_STATE, payload: quizData };
 }
 
@@ -50,7 +50,7 @@ export const fetchQuiz = () => (dispatch) => {
     .then((res) => {
       // - On successful GET:
       //    - Dispatch an action to send the obtained quiz to its state
-      console.log(res.data.question);
+      console.log(`res.data.question => ${res.data.question}`);
       dispatch(setQuiz(res.data));
     })
     .catch((err) => console.log(err));
