@@ -29,3 +29,9 @@ in length after trimming leading and trailing whitespace, Review how to conditio
 // [ ] 15. The state of the quiz survives route changes: - Selecting an answer, navigating away and back, should keep the selected answer - Navigating away and back shouldn't cause a new quiz to be fetched from the API, Review how to persist state using global state with redux.
 
 // [ ] 16. The state of the form survives route changes - Filling out the form, navigating away and back, the entered data should , Review how to persist state using global state with redux.
+
+
+## Current
+
+onClick, selectedAnswer == answerID that was clicked
+

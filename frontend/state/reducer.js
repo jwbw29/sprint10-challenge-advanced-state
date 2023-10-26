@@ -26,7 +26,7 @@ function wheel(state = initialWheelState, action) {
   }
 }
 
-// [ ] Quiz
+// [x] Quiz
 const initialQuizState = null;
 function quiz(state = initialQuizState, action) {
   switch (action.type) {

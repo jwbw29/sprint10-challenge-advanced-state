@@ -17,6 +17,7 @@ const Quiz = (props) => {
     setQuiz,
     fetchQuiz,
     quizData,
+    postAnswer,
   } = props;
 
   useEffect(() => {
@@ -26,25 +27,47 @@ const Quiz = (props) => {
   const handleClick = (e) => {
     e.preventDefault;
     // postAnswer()
-    fetchQuiz();
+    postAnswer();
   };
   return (
     <div id="wrapper">
       {
         //** quiz already in state? Let's use that, otherwise render "Loading next quiz..." */
-        quizData ? ( 
+        quizData ? (
           <>
             <h2>{quizData.question}</h2>
 
             <div id="quizAnswers">
-              <div className="answer selected">
+              <div
+                className={`answer ${
+                  selectedAnswer === quizData.answers[0].answer_id
+                    ? "selected"
+                    : ""
+                }`}
+                onClick={}
+              >
                 {quizData.answers[0].text}
-                <button>SELECTED</button>
+                <button>
+                  {selectedAnswer === quizData.answers[0].answer_id
+                    ? "SELECTED"
+                    : "Select"}
+                </button>
               </div>
 
-              <div className="answer">
+              <div
+                className={`answer ${
+                  selectedAnswer === quizData.answers[1].answer_id
+                    ? "selected"
+                    : ""
+                }`}
+                onClick={}
+              >
                 {quizData.answers[1].text}
-                <button>Select</button>
+                <button>
+                  {selectedAnswer === quizData.answers[1].answer_id
+                    ? "SELECTED"
+                    : "Select"}
+                </button>
               </div>
             </div>
 
@@ -73,4 +96,6 @@ export default connect(mapStateToProps, {
   setMessage,
   setQuiz,
   fetchQuiz,
+  postAnswer,
 })(Quiz);
+
