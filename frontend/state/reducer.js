@@ -52,7 +52,12 @@ const selectedAnswer = (state = initialSelectedAnswerState, action) => {
 // [ ] QUIZ/FORM   - Message
 const initialMessageState = "";
 const infoMessage = (state = initialMessageState, action) => {
-  return state;
+  switch (action.type) {
+    case SET_INFO_MESSAGE:
+      return action.payload;
+    default:
+      return state;
+  }
 };
 
 // [ ] Form

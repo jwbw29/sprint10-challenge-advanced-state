@@ -26,6 +26,7 @@ const Quiz = (props) => {
     // e.preventDefault();
     console.log(`quiz_id: ${quizData.quiz_id}, answer_id: ${selectedAnswer}`);
     postAnswer({ quiz_id: quizData.quiz_id, answer_id: selectedAnswer });
+    console.log(quizData)
     // fetchQuiz();
   };
 

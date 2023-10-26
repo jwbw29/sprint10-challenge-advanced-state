@@ -11,9 +11,9 @@
 // [x] 6. Selecting an answer adds the correct text to its button: - Changes the label of the button from "Select" to "SELECTED" - Turns the label of the unselected from "SELECTED" to "Select", Review accessing and using data from state.
 
 // [x] 7. Selecting and submitting an answer: - Loads the next quiz from the API, Review accessing and using data from state.
-// [ ] 8. Selecting and submitting a correct answer: - Puts the proper success message at the top of the page, Review how to make axios requests and dispatch appropriate actions.
+// [x] 8. Selecting and submitting a correct answer: - Puts the proper success message at the top of the page, Review how to make axios requests and dispatch appropriate actions.
 
-// [ ] 9. Selecting and submitting an incorrect answer: - Submitting puts the proper failure message at the top of the page, Review how to connect components to redux, how to store and retrieve data from state, and dispatch the correct actions.
+// [x] 9. Selecting and submitting an incorrect answer: - Submitting puts the proper failure message at the top of the page, Review how to connect components to redux, how to store and retrieve data from state, and dispatch the correct actions.
 
 // [ ] 10. Typing in inputs changes their , Review handling user input - onChange.
 
@@ -30,8 +30,6 @@ in length after trimming leading and trailing whitespace, Review how to conditio
 
 // [ ] 16. The state of the form survives route changes - Filling out the form, navigating away and back, the entered data should , Review how to persist state using global state with redux.
 
-
 ## Current
 
 onClick, selectedAnswer == answerID that was clicked
-

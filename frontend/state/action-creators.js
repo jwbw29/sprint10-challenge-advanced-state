@@ -26,8 +26,8 @@ export function setSelectedAnswer(answerId) {
 }
 
 // [ ] setMessage
-export function setMessage() {
-  return { type: SET_INFO_MESSAGE };
+export function setMessage(message) {
+  return { type: SET_INFO_MESSAGE, payload: message };
 }
 
 // [ ] setQuiz
@@ -72,10 +72,11 @@ export const postAnswer = (payload) => (dispatch) => {
       answer_id: payload.answer_id,
     })
     // - On successful POST:
-    .then(() => {
+    .then((res) => {
       //    - Dispatch an action to reset the selected answer state
       dispatch(setSelectedAnswer(null));
       //    - Dispatch the fetching of the next quiz
+      dispatch(setMessage(res.data.message));
       dispatch(fetchQuiz());
     })
     .catch((err) => console.log(err));
