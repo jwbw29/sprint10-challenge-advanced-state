@@ -10,36 +10,44 @@ import {
 } from "./action-types";
 import axios from "axios";
 
+// [x] moveClockwise
 export function moveClockwise() {
   return { type: MOVE_CLOCKWISE };
 }
 
+// [x] moveCounterClockwise
 export function moveCounterClockwise() {
   return { type: MOVE_COUNTERCLOCKWISE };
 }
 
+// [x] setSelectedAnswer
 export function setSelectedAnswer(answerId) {
   return { type: SET_SELECTED_ANSWER, payload: answerId };
 }
 
+// [ ] setMessage
 export function setMessage() {
   return { type: SET_INFO_MESSAGE };
 }
 
+// [ ] setQuiz
 export function setQuiz(quizData) {
   // console.log(`setQuiz(quizData), quizData => ${quizData}`);
   return { type: SET_QUIZ_INTO_STATE, payload: quizData };
 }
 
+// [ ] inputChange
 export function inputChange() {
   return { type: INPUT_CHANGE };
 }
 
+// [ ] resetForm
 export function resetForm() {
   return { type: RESET_FORM };
 }
 
 //// Async action creators
+// [x] fetchQuiz
 export const fetchQuiz = () => (dispatch) => {
   const URL = "http://localhost:9000/api/quiz/next";
   // - First, dispatch an action to reset the quiz state (so the "Loading next quiz..." message can display)
@@ -55,19 +63,26 @@ export const fetchQuiz = () => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-export const postAnswer = () => (dispatch) => {
+// [ ] postAnswer
+export const postAnswer = (payload) => (dispatch) => {
   const URL = "http://localhost:9000/api/quiz/answer";
-  // axios.post(URL, {
-  //   quiz_id: ,
-  //   answer_id:
-  // })
-  // - On successful POST:
-  //    - Dispatch an action to reset the selected answer state
-  dispatch(setSelectedAnswer(null));
+  axios
+    .post(URL, {
+      quiz_id: payload.quiz_id,
+      answer_id: payload.answer_id,
+    })
+    // - On successful POST:
+    .then(() => {
+      //    - Dispatch an action to reset the selected answer state
+      dispatch(setSelectedAnswer(null));
+      //    - Dispatch the fetching of the next quiz
+      dispatch(fetchQuiz());
+    })
+    .catch((err) => console.log(err));
+
   //    - Dispatch an action to set the server message to state
-  //    - Dispatch the fetching of the next quiz
-  dispatch(fetchQuiz());
 };
+// [ ] postQuiz
 export const postQuiz = () => (dispatch) => {
   const URL = "http://localhost:9000/api/quiz/new";
   // - On successful POST:

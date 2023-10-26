@@ -37,7 +37,7 @@ const quiz = (state = initialQuizState, action) => {
   }
 };
 
-// [ ] QUIZ - Selected Answer
+// [x] QUIZ - Selected Answer
 const initialSelectedAnswerState = null;
 const selectedAnswer = (state = initialSelectedAnswerState, action) => {
   switch (action.type) {

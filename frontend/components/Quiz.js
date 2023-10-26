@@ -17,14 +17,16 @@ const Quiz = (props) => {
     fetchQuiz();
   }, [fetchQuiz]);
 
-  const handleSubmitClick = (e) => {
-    e.preventDefault;
-    postAnswer();
-  };
-
   const handleAnswerClick = (answerId) => {
     console.log(answerId);
     setSelectedAnswer(answerId);
+  };
+
+  const handleSubmitClick = () => {
+    // e.preventDefault();
+    console.log(`quiz_id: ${quizData.quiz_id}, answer_id: ${selectedAnswer}`);
+    postAnswer({ quiz_id: quizData.quiz_id, answer_id: selectedAnswer });
+    // fetchQuiz();
   };
 
   return (
