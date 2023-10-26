@@ -63,7 +63,8 @@ export const fetchQuiz = () => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-// [ ] postAnswer
+
+// [x] postAnswer
 export const postAnswer = (payload) => (dispatch) => {
   const URL = "http://localhost:9000/api/quiz/answer";
   axios
@@ -83,6 +84,8 @@ export const postAnswer = (payload) => (dispatch) => {
 
   //    - Dispatch an action to set the server message to state
 };
+
+
 // [ ] postQuiz
 export const postQuiz = () => (dispatch) => {
   const URL = "http://localhost:9000/api/quiz/new";

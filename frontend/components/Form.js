@@ -1,26 +1,57 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import * as actionCreators from '../state/action-creators'
+import React from "react";
+import { connect } from "react-redux";
+import { postQuiz, resetForm, inputChange } from "../state/action-creators";
 
-export function Form(props) {
+const Form = (props) => {
+  const { infoMessage, form } = props;
 
-  const onChange = evt => {
+  const onChange = (e) => {
+    inputChange(e.target.value);
+  };
 
-  }
-
-  const onSubmit = evt => {
-
-  }
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <form id="form" onSubmit={onSubmit}>
-      <h2>Create New Quiz</h2>
-      <input maxLength={50} onChange={onChange} id="newQuestion" placeholder="Enter question" />
-      <input maxLength={50} onChange={onChange} id="newTrueAnswer" placeholder="Enter true answer" />
-      <input maxLength={50} onChange={onChange} id="newFalseAnswer" placeholder="Enter false answer" />
-      <button id="submitNewQuizBtn">Submit new quiz</button>
+      <h2>{form.newQuestion}</h2>
+      <input
+        maxLength={50}
+        onChange={onChange}
+        id="newQuestion"
+        placeholder="Enter question"
+      />
+      <input
+        maxLength={50}
+        onChange={onChange}
+        id="newTrueAnswer"
+        placeholder="Enter true answer"
+      />
+      <input
+        maxLength={50}
+        onChange={onChange}
+        id="newFalseAnswer"
+        placeholder="Enter false answer"
+      />
+      <button /*{selectedAnswer ? 'disabled' : ''}*/ id="submitNewQuizBtn">
+        Submit new quiz
+      </button>
     </form>
-  )
-}
+  );
+};
 
-export default connect(st => st, actionCreators)(Form)
+const mapStateToProps = (state) => {
+  return {
+    infoMessage: state.infoMessage,
+    form: {
+      newQuestion: state.newQuestion,
+      newTrueAnswer: state.newTrueAnswer,
+      newFalseAnswer: state.newFalseAnswer,
+    },
+  };
+};
+
+export default connect(mapStateToProps, { postQuiz, resetForm, inputChange })(
+  Form
+);

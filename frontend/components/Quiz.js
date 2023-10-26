@@ -26,7 +26,7 @@ const Quiz = (props) => {
     // e.preventDefault();
     console.log(`quiz_id: ${quizData.quiz_id}, answer_id: ${selectedAnswer}`);
     postAnswer({ quiz_id: quizData.quiz_id, answer_id: selectedAnswer });
-    console.log(quizData)
+    console.log(quizData);
     // fetchQuiz();
   };
 
@@ -54,7 +54,7 @@ const Quiz = (props) => {
                 </div>
               ))}
             </div>
-            <button id="submitAnswerBtn" onClick={handleSubmitClick}>
+            <button /*{selectedAnswer ? 'disabled' : ''}*/ id="submitAnswerBtn" onClick={handleSubmitClick}>
               Submit answer
             </button>
           </>
