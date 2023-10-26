@@ -1,9 +1,28 @@
 import React from "react";
 import { connect } from "react-redux";
-import { selectAnswer, setMessage } from "../state/action-creators";
+import {
+  selectAnswer,
+  setMessage,
+  setQuiz,
+  fetchQuiz,
+  postAnswer,
+} from "../state/action-creators";
 
 const Quiz = (props) => {
-  const { quiz, selectedAnswer, infoMessage, selectAnswer, setMessage } = props;
+  const {
+    selectAnswer,
+    infoMessage,
+    setMessage,
+    setQuiz,
+    fetchQuiz,
+    quizData,
+  } = props;
+
+  const handleClick = (e) => {
+    e.preventDefault;
+    // postAnswer()
+    fetchQuiz();
+  };
   return (
     <div id="wrapper">
       {
@@ -24,7 +43,9 @@ const Quiz = (props) => {
               </div>
             </div>
 
-            <button id="submitAnswerBtn">Submit answer</button>
+            <button id="submitAnswerBtn" onClick={handleClick}>
+              Submit answer
+            </button>
           </>
         ) : (
           "Loading next quiz..."
@@ -36,10 +57,15 @@ const Quiz = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    quiz: state.quiz,
-    selectedAnswer: state.selectedAnswer,
+    quizData: state.quizData,
+    selectAnswer: state.selectAnswer,
     infoMessage: state.infoMessage,
   };
 };
 
-export default connect(mapStateToProps, { selectAnswer, setMessage })(Quiz);
+export default connect(mapStateToProps, {
+  selectAnswer,
+  setMessage,
+  setQuiz,
+  fetchQuiz,
+})(Quiz);

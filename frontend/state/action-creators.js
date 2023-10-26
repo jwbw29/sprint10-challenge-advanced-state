@@ -26,9 +26,10 @@ export function setMessage() {
   return { type: SET_INFO_MESSAGE };
 }
 
-export function setQuiz() {
+export function setQuiz(quizData) {
   //// this happens on load, which means we need a GET somewhere
-  return { type: SET_QUIZ_INTO_STATE, payload: { quiz_id: "", question: "" } };
+  console.log("setQuiz ran on button click");
+  return { type: SET_QUIZ_INTO_STATE, payload: quizData };
 }
 
 export function inputChange() {
@@ -43,13 +44,14 @@ export function resetForm() {
 export const fetchQuiz = () => (dispatch) => {
   const URL = "http://localhost:9000/api/quiz/next";
   // - First, dispatch an action to reset the quiz state (so the "Loading next quiz..." message can display)
-  dispatch(setQuiz()); //// still don't know whta to do here
+  dispatch(setQuiz(null));
   axios
     .get(URL)
     .then((res) => {
+      const quizData = res.data;
       // - On successful GET:
       //    - Dispatch an action to send the obtained quiz to its state
-      console.log(res);
+      dispatch(setQuiz(quizData));
     })
     .catch((err) => console.log(err));
 };
