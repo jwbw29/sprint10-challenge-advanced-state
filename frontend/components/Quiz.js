@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { useEffect } from "react";
 import {
   selectAnswer,
   setMessage,
@@ -15,8 +16,12 @@ const Quiz = (props) => {
     setMessage,
     setQuiz,
     fetchQuiz,
-    quizData,
+    quizQuestion,
   } = props;
+
+  useEffect(() => {
+    fetchQuiz();
+  }, [fetchQuiz]);
 
   const handleClick = (e) => {
     e.preventDefault;
@@ -27,9 +32,9 @@ const Quiz = (props) => {
     <div id="wrapper">
       {
         //** quiz already in state? Let's use that, otherwise render "Loading next quiz..." */
-        true ? (
+        true ? ( // TODO replace this with something like quizData
           <>
-            <h2>What is a closure?</h2>
+            <h2>{quizQuestion}</h2>
 
             <div id="quizAnswers">
               <div className="answer selected">
@@ -57,7 +62,7 @@ const Quiz = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    quizData: state.quizData,
+    quizQuestion: state.quizData,
     selectAnswer: state.selectAnswer,
     infoMessage: state.infoMessage,
   };
