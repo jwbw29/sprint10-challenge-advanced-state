@@ -6,9 +6,9 @@
 
 // [ ] 4. Navigating to the Quiz screen: - The "Submit answer" button should be , Review how to conditionally disable a button element.
 
-// [ ] 5. Selecting an answer adds the correct class name: - Adds the "selected" class name to the selected answer - Removes the "selected" class name from the other answer, Review setting class names and using data from state.
+// [x] 5. Selecting an answer adds the correct class name: - Adds the "selected" class name to the selected answer - Removes the "selected" class name from the other answer, Review setting class names and using data from state.
 
-// [ ] 6. Selecting an answer adds the correct text to its button: - Changes the label of the button from "Select" to "SELECTED" - Turns the label of the unselected from "SELECTED" to "Select", Review accessing and using data from state.
+// [x] 6. Selecting an answer adds the correct text to its button: - Changes the label of the button from "Select" to "SELECTED" - Turns the label of the unselected from "SELECTED" to "Select", Review accessing and using data from state.
 
 // [x] 7. Selecting and submitting an answer: - Loads the next quiz from the API, Review accessing and using data from state.
 // [ ] 8. Selecting and submitting a correct answer: - Puts the proper success message at the top of the page, Review how to make axios requests and dispatch appropriate actions.

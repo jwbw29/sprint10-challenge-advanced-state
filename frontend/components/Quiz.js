@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { useEffect } from "react";
 import {
-  selectAnswer,
+  setSelectedAnswer,
   setMessage,
   setQuiz,
   fetchQuiz,
@@ -10,25 +10,23 @@ import {
 } from "../state/action-creators";
 
 const Quiz = (props) => {
-  const {
-    selectedAnswer,
-    infoMessage,
-    setMessage,
-    setQuiz,
-    fetchQuiz,
-    quizData,
-    postAnswer,
-  } = props;
+  const { selectedAnswer, fetchQuiz, quizData, postAnswer, setSelectedAnswer } =
+    props;
 
   useEffect(() => {
     fetchQuiz();
   }, [fetchQuiz]);
 
-  const handleClick = (e) => {
+  const handleSubmitClick = (e) => {
     e.preventDefault;
-    // postAnswer()
     postAnswer();
   };
+
+  const handleAnswerClick = (answerId) => {
+    console.log(answerId);
+    setSelectedAnswer(answerId);
+  };
+
   return (
     <div id="wrapper">
       {
@@ -45,7 +43,7 @@ const Quiz = (props) => {
                   }`}
                 >
                   {answer.text}
-                  <button>
+                  <button onClick={() => handleAnswerClick(answer.answer_id)}>
                     {selectedAnswer === answer.answer_id
                       ? "SELECTED"
                       : "Select"}
@@ -53,7 +51,7 @@ const Quiz = (props) => {
                 </div>
               ))}
             </div>
-            <button id="submitAnswerBtn" onClick={handleClick}>
+            <button id="submitAnswerBtn" onClick={handleSubmitClick}>
               Submit answer
             </button>
           </>
@@ -74,7 +72,7 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {
-  selectAnswer,
+  setSelectedAnswer,
   setMessage,
   setQuiz,
   fetchQuiz,

@@ -13,7 +13,7 @@ import {
 
 // [x] Wheel
 const initialWheelState = 0;
-function wheel(state = initialWheelState, action) {
+const wheel = (state = initialWheelState, action) => {
   switch (action.type) {
     case MOVE_CLOCKWISE:
       return (state + 1) % 6;
@@ -24,30 +24,36 @@ function wheel(state = initialWheelState, action) {
     default:
       return state;
   }
-}
+};
 
 // [x] Quiz
 const initialQuizState = null;
-function quiz(state = initialQuizState, action) {
+const quiz = (state = initialQuizState, action) => {
   switch (action.type) {
     case SET_QUIZ_INTO_STATE:
       return action.payload;
     default:
       return state;
   }
-}
+};
 
 // [ ] QUIZ - Selected Answer
 const initialSelectedAnswerState = null;
-function selectedAnswer(state = initialSelectedAnswerState, action) {
-  return state;
-}
+const selectedAnswer = (state = initialSelectedAnswerState, action) => {
+  switch (action.type) {
+    case SET_SELECTED_ANSWER:
+      console.log(`action.answerId => ${action.payload}`);
+      return action.payload;
+    default:
+      return state;
+  }
+};
 
 // [ ] QUIZ/FORM   - Message
 const initialMessageState = "";
-function infoMessage(state = initialMessageState, action) {
+const infoMessage = (state = initialMessageState, action) => {
   return state;
-}
+};
 
 // [ ] Form
 const initialFormState = {
@@ -55,9 +61,9 @@ const initialFormState = {
   newTrueAnswer: "",
   newFalseAnswer: "",
 };
-function form(state = initialFormState, action) {
+const form = (state = initialFormState, action) => {
   return state;
-}
+};
 
 export default combineReducers({
   wheel,

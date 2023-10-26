@@ -18,8 +18,8 @@ export function moveCounterClockwise() {
   return { type: MOVE_COUNTERCLOCKWISE };
 }
 
-export function selectAnswer() {
-  return { type: SET_SELECTED_ANSWER }; //// TODO what will the payload be?
+export function setSelectedAnswer(answerId) {
+  return { type: SET_SELECTED_ANSWER, payload: answerId };
 }
 
 export function setMessage() {
@@ -59,11 +59,11 @@ export const postAnswer = () => (dispatch) => {
   const URL = "http://localhost:9000/api/quiz/answer";
   // axios.post(URL, {
   //   quiz_id: ,
-  //   answer_id: 
+  //   answer_id:
   // })
   // - On successful POST:
   //    - Dispatch an action to reset the selected answer state
-  dispatch(selectAnswer(null));
+  dispatch(setSelectedAnswer(null));
   //    - Dispatch an action to set the server message to state
   //    - Dispatch the fetching of the next quiz
   dispatch(fetchQuiz());
