@@ -10,7 +10,7 @@ import {
   INPUT_CHANGE,
 } from "./action-types";
 
-// [x] Wheel
+//// WHEEL ///////
 const initialWheelState = 0;
 const wheel = (state = initialWheelState, action) => {
   switch (action.type) {
@@ -25,18 +25,19 @@ const wheel = (state = initialWheelState, action) => {
   }
 };
 
-// [x] Quiz
+//// QUIZ ///////
 const initialQuizState = null;
 const quiz = (state = initialQuizState, action) => {
   switch (action.type) {
     case SET_QUIZ_INTO_STATE:
+      // TODO Possibly add {...state} here
       return action.payload;
     default:
       return state;
   }
 };
 
-// [x] QUIZ - Selected Answer
+//// SELECTED ANSWER ///////
 const initialSelectedAnswerState = null;
 const selectedAnswer = (state = initialSelectedAnswerState, action) => {
   switch (action.type) {
@@ -48,7 +49,7 @@ const selectedAnswer = (state = initialSelectedAnswerState, action) => {
   }
 };
 
-// [ ] QUIZ/FORM   - Message
+//// MESSAGE ///////
 const initialMessageState = "";
 const infoMessage = (state = initialMessageState, action) => {
   switch (action.type) {
@@ -59,7 +60,7 @@ const infoMessage = (state = initialMessageState, action) => {
   }
 };
 
-// [ ] Form
+//// FORM //////
 const initialFormState = {
   newQuestion: "",
   newTrueAnswer: "",
