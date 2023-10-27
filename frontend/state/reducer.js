@@ -69,9 +69,8 @@ const form = (state = initialFormState, action) => {
   switch (action.type) {
     case INPUT_CHANGE:
       return {
-        newQuestion: action.payload,
-        newTrueAnswer: action.payload,
-        newFalseAnswer: action.payload,
+        ...state,
+        [action.payload.field]: action.payload.value,
       };
     default:
       return state;
