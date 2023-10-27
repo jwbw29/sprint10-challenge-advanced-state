@@ -19,7 +19,7 @@
 
 // [x] 11. The submit button is disabled until all inputs have values more than one character in length after trimming leading and trailing whitespace, Review how to conditionally disable a button element.
 
-// [ ] 12. Successful submit of new quiz - Displays the correct success message at the top of the screen - Empties out the form, Review using data from state and how to reset state.
+// [x] 12. Successful submit of new quiz - Displays the correct success message at the top of the screen - Empties out the form, Review using data from state and how to reset state.
 
 // [x] 13. Successful submit of new quiz - Adds the quiz to the roster of quizzes, Review how to use axios to make POST requests.
 
@@ -27,8 +27,4 @@
 
 // [ ] 15. The state of the quiz survives route changes: - Selecting an answer, navigating away and back, should keep the selected answer - Navigating away and back shouldn't cause a new quiz to be fetched from the API, Review how to persist state using global state with redux.
 
-// [ ] 16. The state of the form survives route changes - Filling out the form, navigating away and back, the entered data should , Review how to persist state using global state with redux.
-
-## Current
-
-onClick, selectedAnswer == answerID that was clicked
+// [x] 16. The state of the form survives route changes - Filling out the form, navigating away and back, the entered data should , Review how to persist state using global state with redux.

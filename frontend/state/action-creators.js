@@ -32,7 +32,6 @@ export function setMessage(message) {
 
 // [ ] setQuiz
 export function setQuiz(quizData) {
-  // console.log(`setQuiz(quizData), quizData => ${quizData}`);
   return { type: SET_QUIZ_INTO_STATE, payload: quizData };
 }
 
@@ -47,29 +46,22 @@ export function inputChange({ field, value }) {
   };
 }
 
-// [ ] resetForm
 export function resetForm() {
   return { type: RESET_FORM };
 }
 
 //// Async action creators
-// [x] fetchQuiz
 export const fetchQuiz = () => (dispatch) => {
   const URL = "http://localhost:9000/api/quiz/next";
-  // - First, dispatch an action to reset the quiz state (so the "Loading next quiz..." message can display)
   dispatch(setQuiz(null));
   axios
     .get(URL)
     .then((res) => {
-      // - On successful GET:
-      //    - Dispatch an action to send the obtained quiz to its state
-      // console.log(`res.data.question => ${res.data.question}`);
       dispatch(setQuiz(res.data));
     })
     .catch((err) => console.log(err));
 };
 
-// [x] postAnswer
 export const postAnswer = (payload) => (dispatch) => {
   const URL = "http://localhost:9000/api/quiz/answer";
   axios
@@ -77,20 +69,15 @@ export const postAnswer = (payload) => (dispatch) => {
       quiz_id: payload.quiz_id,
       answer_id: payload.answer_id,
     })
-    // - On successful POST:
     .then((res) => {
-      //    - Dispatch an action to reset the selected answer state
       dispatch(setSelectedAnswer(null));
-      //    - Dispatch the fetching of the next quiz
       dispatch(setMessage(res.data.message));
       dispatch(fetchQuiz());
     })
     .catch((err) => console.log(err));
 
-  //    - Dispatch an action to set the server message to state
 };
 
-// [ ] postQuiz
 export const postQuiz = (payload) => (dispatch) => {
   const URL = "http://localhost:9000/api/quiz/new";
   axios
@@ -99,17 +86,12 @@ export const postQuiz = (payload) => (dispatch) => {
       true_answer_text: payload.true_answer_text,
       false_answer_text: payload.false_answer_text,
     })
-    // - On successful POST:
     .then(() => {
-      console.log(`Congrats: "${payload.question_text}" is a great question!`);
 
-      // [x] Dispatch the correct message to the the appropriate state
       dispatch(
         setMessage(`Congrats: "${payload.question_text}" is a great question!`)
       );
-      // [x] Dispatch the resetting of the form
       dispatch(resetForm());
     })
     .catch((err) => console.log(err));
 };
-//// On promise rejections, use log statements or breakpoints, and put an appropriate error message in state

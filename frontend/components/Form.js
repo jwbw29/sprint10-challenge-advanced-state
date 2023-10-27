@@ -8,7 +8,6 @@ const Form = (props) => {
   const onChange = (e) => {
     const { id, value } = e.target;
     inputChange({ field: id, value });
-    console.log(id, value);
   };
 
   const onSubmit = (e) => {
