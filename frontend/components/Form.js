@@ -23,7 +23,7 @@ const Form = (props) => {
 
   return (
     <form id="form" onSubmit={onSubmit}>
-      <h2>{form.newQuestion}</h2>
+      <h2>Create New Quiz</h2>
       <input
         maxLength={50}
         onChange={onChange}
@@ -52,11 +52,7 @@ const Form = (props) => {
 const mapStateToProps = (state) => {
   return {
     infoMessage: state.infoMessage,
-    form: {
-      newQuestion: state.newQuestion,
-      newTrueAnswer: state.newTrueAnswer,
-      newFalseAnswer: state.newFalseAnswer,
-    },
+    form: state.form,
   };
 };
 

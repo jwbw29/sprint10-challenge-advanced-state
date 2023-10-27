@@ -92,19 +92,21 @@ export const postAnswer = (payload) => (dispatch) => {
 
 // [ ] postQuiz
 export const postQuiz = (payload) => (dispatch) => {
-  console.log("postQuiz being dispatched?");
-  console.log("payload: ", payload);
   const URL = "http://localhost:9000/api/quiz/new";
   axios
     .post(URL, {
-      question_text: payload.question_text, 
-      true_answer_text: payload.true_answer_text, 
-      false_answer_text: payload.false_answer_text, 
+      question_text: payload.question_text,
+      true_answer_text: payload.true_answer_text,
+      false_answer_text: payload.false_answer_text,
     })
     // - On successful POST:
-    .then((res) => {
+    .then(() => {
+      console.log(`Congrats: "${payload.question_text}" is a great question!`);
+
       // [x] Dispatch the correct message to the the appropriate state
-      dispatch(setMessage(res.data.message));
+      dispatch(
+        setMessage(`Congrats: "${payload.question_text}" is a great question!`)
+      );
       // [x] Dispatch the resetting of the form
       dispatch(resetForm());
     })

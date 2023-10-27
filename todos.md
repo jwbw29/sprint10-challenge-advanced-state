@@ -15,14 +15,14 @@
 
 // [x] 9. Selecting and submitting an incorrect answer: - Submitting puts the proper failure message at the top of the page, Review how to connect components to redux, how to store and retrieve data from state, and dispatch the correct actions.
 
-// [ ] 10. Typing in inputs changes their , Review handling user input - onChange.
+// [x] 10. Typing in inputs changes their , Review handling user input - onChange.
 
 // [ ] 11. The submit button is disabled until all inputs have values more than one character
 in length after trimming leading and trailing whitespace, Review how to conditionally disable a button element.
 
 // [ ] 12. Successful submit of new quiz - Displays the correct success message at the top of the screen - Empties out the form, Review using data from state and how to reset state.
 
-// [ ] 13. Successful submit of new quiz - Adds the quiz to the roster of quizzes, Review how to use axios to make POST requests.
+// [x] 13. Successful submit of new quiz - Adds the quiz to the roster of quizzes, Review how to use axios to make POST requests.
 
 // [x] 14. The state of the wheel survives route changes: - Moving the wheel, navigating away and back, should keep the position of the "B", Review how to persist state using global state with redux.
 
