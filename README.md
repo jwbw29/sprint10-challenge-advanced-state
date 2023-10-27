@@ -62,14 +62,14 @@ The endpoints needed for this project are the following:
 
 ## MVP
 
-TODO In order to complete this project, you must fix the following modules:
+ In order to complete this project, you must fix the following modules:
 
-- [ ] [reducer.js](frontend/state/reducer.js)
-- [ ] [action-creators.js](frontend/state/action-creators.js)
+- [x] [reducer.js](frontend/state/reducer.js)
+- [x] [action-creators.js](frontend/state/action-creators.js)
 - [x] [Message.js](frontend/components/Message.js)
 - [x] [Wheel.js](frontend/components/Wheel.js)
-- [ ] [Quiz.js](frontend/components/Quiz.js)
-- [ ] [Form.js](frontend/components/Form.js)
+- [x] [Quiz.js](frontend/components/Quiz.js)
+- [x] [Form.js](frontend/components/Form.js)
 
 ### Notes
 
@@ -81,10 +81,10 @@ TODO In order to complete this project, you must fix the following modules:
 
 ## MVP Short Explanation
 
-TODO ❗ ALL TESTS MUST PASS
+ ❗ ALL TESTS MUST PASS
 
 ## Stretch Goals
 
-TODO
+
 
 - Without breaking any tests, see to randomizing the order in which answers appear.
