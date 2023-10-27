@@ -21,9 +21,7 @@ const Quiz = (props) => {
   };
 
   const handleSubmitClick = () => {
-    // e.preventDefault();
     postAnswer({ quiz_id: quizData.quiz_id, answer_id: selectedAnswer });
-    // fetchQuiz();
   };
 
   return (

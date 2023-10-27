@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 
 const Message = (props) => {
   const { infoMessage } = props;
-  // [x] We'll remove "Nice job!" and replace with something passed from a prop
   return <div id="message">{infoMessage}</div>;
 };
 

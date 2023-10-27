@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 
 const Wheel = (props) => {
   const { wheel, moveClockwise, moveCounterClockwise } = props;
-  //// TODO I think we need to apply the state variable to these divs somehow; but that doesn't explain while it's not console logging onClick
 
   return (
     <div id="wrapper">

@@ -25,6 +25,6 @@
 
 // [x] 14. The state of the wheel survives route changes: - Moving the wheel, navigating away and back, should keep the position of the "B", Review how to persist state using global state with redux.
 
-// [ ] 15. The state of the quiz survives route changes: - Selecting an answer, navigating away and back, should keep the selected answer - Navigating away and back shouldn't cause a new quiz to be fetched from the API, Review how to persist state using global state with redux.
+// [x] 15. The state of the quiz survives route changes: - Selecting an answer, navigating away and back, should keep the selected answer - Navigating away and back shouldn't cause a new quiz to be fetched from the API, Review how to persist state using global state with redux.
 
 // [x] 16. The state of the form survives route changes - Filling out the form, navigating away and back, the entered data should , Review how to persist state using global state with redux.

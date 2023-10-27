@@ -10,32 +10,26 @@ import {
 } from "./action-types";
 import axios from "axios";
 
-// [x] moveClockwise
 export function moveClockwise() {
   return { type: MOVE_CLOCKWISE };
 }
 
-// [x] moveCounterClockwise
 export function moveCounterClockwise() {
   return { type: MOVE_COUNTERCLOCKWISE };
 }
 
-// [x] setSelectedAnswer
 export function setSelectedAnswer(answerId) {
   return { type: SET_SELECTED_ANSWER, payload: answerId };
 }
 
-// [ ] setMessage
 export function setMessage(message) {
   return { type: SET_INFO_MESSAGE, payload: message };
 }
 
-// [ ] setQuiz
 export function setQuiz(quizData) {
   return { type: SET_QUIZ_INTO_STATE, payload: quizData };
 }
 
-// [x] inputChange
 export function inputChange({ field, value }) {
   return {
     type: INPUT_CHANGE,
@@ -75,7 +69,6 @@ export const postAnswer = (payload) => (dispatch) => {
       dispatch(fetchQuiz());
     })
     .catch((err) => console.log(err));
-
 };
 
 export const postQuiz = (payload) => (dispatch) => {
@@ -87,7 +80,6 @@ export const postQuiz = (payload) => (dispatch) => {
       false_answer_text: payload.false_answer_text,
     })
     .then(() => {
-
       dispatch(
         setMessage(`Congrats: "${payload.question_text}" is a great question!`)
       );
