@@ -54,7 +54,8 @@ const Quiz = (props) => {
               ))}
             </div>
             <button
-              /*{selectedAnswer ? 'disabled' : ''}*/ id="submitAnswerBtn"
+              disabled={!selectedAnswer ? true : false}
+              id="submitAnswerBtn"
               onClick={handleSubmitClick}
             >
               Submit answer

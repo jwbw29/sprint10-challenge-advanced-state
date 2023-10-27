@@ -2,6 +2,7 @@
 import { combineReducers } from "redux";
 
 import {
+  RESET_FORM,
   MOVE_CLOCKWISE,
   MOVE_COUNTERCLOCKWISE,
   SET_QUIZ_INTO_STATE,
@@ -68,6 +69,9 @@ const initialFormState = {
 };
 const form = (state = initialFormState, action) => {
   switch (action.type) {
+    case RESET_FORM:
+      return initialFormState;
+
     case INPUT_CHANGE:
       return {
         ...state,

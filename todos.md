@@ -4,7 +4,7 @@
 
 // [x] 3. Navigating to the Quiz screen: - Loads the first question & answers , Review how to write asynchronous action creators to consume data from external API's
 
-// [ ] 4. Navigating to the Quiz screen: - The "Submit answer" button should be , Review how to conditionally disable a button element.
+// [x] 4. Navigating to the Quiz screen: - The "Submit answer" button should be disabled, Review how to conditionally disable a button element.
 
 // [x] 5. Selecting an answer adds the correct class name: - Adds the "selected" class name to the selected answer - Removes the "selected" class name from the other answer, Review setting class names and using data from state.
 
@@ -17,8 +17,7 @@
 
 // [x] 10. Typing in inputs changes their , Review handling user input - onChange.
 
-// [ ] 11. The submit button is disabled until all inputs have values more than one character
-in length after trimming leading and trailing whitespace, Review how to conditionally disable a button element.
+// [x] 11. The submit button is disabled until all inputs have values more than one character in length after trimming leading and trailing whitespace, Review how to conditionally disable a button element.
 
 // [ ] 12. Successful submit of new quiz - Displays the correct success message at the top of the screen - Empties out the form, Review using data from state and how to reset state.
 
