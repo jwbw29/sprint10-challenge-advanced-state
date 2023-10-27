@@ -8,7 +8,6 @@ import {
   SET_SELECTED_ANSWER,
   SET_INFO_MESSAGE,
   INPUT_CHANGE,
-  RESET_FORM,
 } from "./action-types";
 
 // [x] Wheel
@@ -67,7 +66,16 @@ const initialFormState = {
   newFalseAnswer: "",
 };
 const form = (state = initialFormState, action) => {
-  return state;
+  switch (action.type) {
+    case INPUT_CHANGE:
+      return {
+        newQuestion: action.payload,
+        newTrueAnswer: action.payload,
+        newFalseAnswer: action.payload,
+      };
+    default:
+      return state;
+  }
 };
 
 export default combineReducers({

@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { useEffect } from "react";
 import {
   setSelectedAnswer,
-  setMessage,
   setQuiz,
   fetchQuiz,
   postAnswer,
@@ -54,7 +53,10 @@ const Quiz = (props) => {
                 </div>
               ))}
             </div>
-            <button /*{selectedAnswer ? 'disabled' : ''}*/ id="submitAnswerBtn" onClick={handleSubmitClick}>
+            <button
+              /*{selectedAnswer ? 'disabled' : ''}*/ id="submitAnswerBtn"
+              onClick={handleSubmitClick}
+            >
               Submit answer
             </button>
           </>
@@ -70,13 +72,11 @@ const mapStateToProps = (state) => {
   return {
     quizData: state.quiz,
     selectedAnswer: state.selectedAnswer,
-    infoMessage: state.infoMessage,
   };
 };
 
 export default connect(mapStateToProps, {
   setSelectedAnswer,
-  setMessage,
   setQuiz,
   fetchQuiz,
   postAnswer,

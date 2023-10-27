@@ -37,8 +37,15 @@ export function setQuiz(quizData) {
 }
 
 // [ ] inputChange
-export function inputChange() {
-  return { type: INPUT_CHANGE };
+export function inputChange(input) {
+  return {
+    type: INPUT_CHANGE,
+    payload: {
+      newQuestion: input,
+      newTrueAnswer: input,
+      newFalseAnswer: input,
+    },
+  };
 }
 
 // [ ] resetForm
@@ -63,7 +70,6 @@ export const fetchQuiz = () => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-
 // [x] postAnswer
 export const postAnswer = (payload) => (dispatch) => {
   const URL = "http://localhost:9000/api/quiz/answer";
@@ -85,12 +91,22 @@ export const postAnswer = (payload) => (dispatch) => {
   //    - Dispatch an action to set the server message to state
 };
 
-
 // [ ] postQuiz
-export const postQuiz = () => (dispatch) => {
+export const postQuiz = (payload) => (dispatch) => {
   const URL = "http://localhost:9000/api/quiz/new";
-  // - On successful POST:
-  //    - Dispatch the correct message to the the appropriate state
-  //    - Dispatch the resetting of the form
+  axios
+    .post(URL, {
+      question_text: payload.question_text,
+      true_answer_text: payload.true_answer_text,
+      false_answer_text: payload.false_answer_text,
+    })
+    .then((res) => {
+      // - On successful POST:
+      // [x] Dispatch the correct message to the the appropriate state
+      dispatch(setMessage(res.data.message));
+      // [x] Dispatch the resetting of the form
+      dispatch(resetForm());
+    })
+    .catch((err) => console.log(err));
 };
 //// On promise rejections, use log statements or breakpoints, and put an appropriate error message in state

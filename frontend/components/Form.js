@@ -3,14 +3,23 @@ import { connect } from "react-redux";
 import { postQuiz, resetForm, inputChange } from "../state/action-creators";
 
 const Form = (props) => {
-  const { infoMessage, form } = props;
+  const { form } = props;
 
   const onChange = (e) => {
-    inputChange(e.target.value);
+    inputChange({
+      newQuestion: e.target.value,
+      newTrueAnswer: e.target.value,
+      newFalseAnswer: e.target.value,
+    });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
+    postQuiz({
+      question_text: "Love JS?",
+      true_answer_text: "yes",
+      false_answer_text: "nah",
+    });
   };
 
   return (
@@ -52,6 +61,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { postQuiz, resetForm, inputChange })(
-  Form
-);
+export default connect(mapStateToProps, {
+  postQuiz,
+  resetForm,
+  inputChange,
+})(Form);
